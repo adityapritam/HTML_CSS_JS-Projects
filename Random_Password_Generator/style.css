@@ -38,7 +38,7 @@ button{
     margin-top:1rem;
     margin-left:0.2rem;
     font-size: 1.3rem;
-    padding:0.3rem;
+    padding:    0.3rem;
     padding-left: 0.8rem;
     display: flex;
     justify-content: space-between;
@@ -69,7 +69,7 @@ button{
     visibility: hidden;
 }
 #cross{
-    background-color:#89DF90 ;
+    background-color:transparent ;
     border-color: transparent;
     padding: 0.4rem;
     border-radius: 50%;
@@ -80,7 +80,7 @@ button{
 }
 @keyframes slidein{
     0%{
-        overflow: hidden;
+        visibility: hidden;
         height: 0px;
         width: 0px;
         right: -1000px;
@@ -97,6 +97,9 @@ button{
     0%{
         right:40px;
     }
+    40%{
+        visibility: hidden;
+    }
     92%{
         height: 3rem;
         width: 20rem;
@@ -105,9 +108,13 @@ button{
         height: 0px;
         width: 0px;
         right: -1000px;
+        visibility: hidden;
     }
 }
 @media (max-width: 768px) {
+    .confirm{
+        bottom: 5rem;
+    }
     .generator{
         height: 13rem;
         width: 19rem;
