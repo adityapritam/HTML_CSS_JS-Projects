@@ -2,11 +2,15 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 html, body{
     height: 100%;
     width: 100%;
+}
+button{
+    cursor: pointer;
 }
 .main{
     display: flex;
@@ -39,6 +43,9 @@ html, body{
     display: flex;
     justify-content: space-between;
 }
+#copy{
+    cursor: pointer;
+}
 #submit{
     background-color: black;
     color: white;
@@ -46,8 +53,59 @@ html, body{
     margin-top:1rem;
     margin-left:0.2rem;
 }
-#copy{
-
+.confirm{
+    height: 3rem;
+    width: 20rem;
+    background-color: #89DF90;
+    position: absolute;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    padding:0.5rem;
+    padding-left: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    bottom: 20px;
+    right: 20px;
+    visibility: hidden;
+}
+#cross{
+    background-color:#89DF90 ;
+    border-color: transparent;
+    padding: 0.4rem;
+    border-radius: 50%;
+}
+#cross:hover{
+    border: 1px solid rgb(83, 82, 82);
+    cursor: pointer;
+}
+@keyframes slidein{
+    0%{
+        overflow: hidden;
+        height: 0px;
+        width: 0px;
+        right: -1000px;
+    }
+    92%{
+        height: 3rem;
+        width: 20rem;
+    }
+    100%{
+        right:40px;
+    }
+}
+@keyframes slideout{
+    0%{
+        right:40px;
+    }
+    92%{
+        height: 3rem;
+        width: 20rem;
+    }
+    100%{
+        height: 0px;
+        width: 0px;
+        right: -1000px;
+    }
 }
 @media (max-width: 768px) {
     .generator{
