@@ -1,265 +1,199 @@
-let c=document.getElementById("C");
-let one=document.getElementById("one");
-let two=document.getElementById("two");
-let three=document.getElementById("three");
-let four=document.getElementById("four");
-let five=document.getElementById("five");
-let six=document.getElementById("six");
-let seven=document.getElementById("seven");
-let eight=document.getElementById("eight");
-let nine=document.getElementById("nine");
-let zero=document.getElementById("zero");
-let text=document.getElementById("holder");
-let point=document.getElementById("point");
-let plus=document.getElementById("plus");
-let minus=document.getElementById("minus");
-let multiply=document.getElementById("multiply");
-let divide=document.getElementById("divide");
+let key0=document.getElementById("zero");
+let key1=document.getElementById("one");
+let key2=document.getElementById("two");
+let key3=document.getElementById("three");
+let key4=document.getElementById("four");
+let key5=document.getElementById("five");
+let key6=document.getElementById("six");
+let key7=document.getElementById("seven");
+let key8=document.getElementById("eight");
+let key9=document.getElementById("nine");
+
+let screen=document.getElementById("holder");
+
+let clear=document.getElementById("C");
+
+let symbol=0;
+
 let equals=document.getElementById("equals");
 
-let num=0;
-let decimal=false;//tells if point is clicked or not
-let count=1;
-let min=false;
-let answer=0;
-let clearscreen=false;
-let stc=1;//startcount
-c.addEventListener("click",function(){  //Clear the screen of calculator
-    text.innerHTML="";
-    num=0;
-    answer=0;
-    stc=1;
+function display(a){
+    screen.innerHTML=`${screen.textContent}`+a;//display the text present+ the new text a.
+}
+
+key0.addEventListener("click",function(){//as key 0 is clicked display zero.
+    display(0);
 });
 
-    one.addEventListener("click",function(){//what happens when one is clicked
-        if(clearscreen){    //after every calculation if a number is directly pressed the screen should be cleared
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}1`;
-        if(decimal==false)
-        num=num*10+1;
-        else if(decimal==true){
-            num=num+(1/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    two.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}2`;
-        if(decimal==false)
-        num=num*10+2;
-        else if(decimal==true){
-            num=num+(2/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    three.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}3`;
-        if(decimal==false)
-        num=num*10+3;
-        else if(decimal==true){
-            num=num+(3/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    four.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}4`;
-        if(decimal==false)
-        num=num*10+4;
-        else if(decimal==true){
-            num=num+(4/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    five.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}5`;
-        if(decimal==false)
-        num=num*10+5;
-        else if(decimal==true){
-            num=num+(5/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    six.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}6`;
-        if(decimal==false)
-        num=num*10+6;
-        else if(decimal==true){
-            num=num+(6/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    seven.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}7`;
-        if(decimal==false)
-        num=num*10+7;
-        else if(decimal==true){
-            num=num+(7/(Math.pow(10,count)));
-            count++;
-        }
-        
-    });
-    eight.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}8`;
-        if(decimal==false)
-        num=num*10+8;
-        else if(decimal==true){
-            num=num+(8/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    nine.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}9`;
-        if(decimal==false)
-        num=num*10+9;
-        else if(decimal==true){
-            num=num+(9/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    zero.addEventListener("click",function(){
-                if(clearscreen){
-            text.innerHTML="";
-            num=0;
-            answer=0;
-            clearscreen=false;
-        }
-        text.innerHTML=`${text.textContent}0`;
-        if(decimal==false)
-        num=num*10+0;
-        else if(decimal==true){
-            num=num+(0/(Math.pow(10,count)));
-            count++;
-        }
-    });
-    point.addEventListener("click",function(){//addition of decimal point
-        if(decimal){
-            alert("Bad Command");
-            return false;
-        }
-        text.innerHTML=`${text.textContent}.`;
-        decimal=true;
-        num=num*1.0;
-        console.log(decimal);
-    });
+key1.addEventListener("click",function(){
+    display(1);;
+});
 
-let add=false;
-let subtract=false;
-let star=false;
-let slash=false;
+key2.addEventListener("click",function(){
+    display(2);
+});
 
-plus.addEventListener("click",function(){
-    text.innerHTML=`${text.textContent}+`;
-    clearscreen=false;
-    if(stc==1&&min==true){
-        answer-=num;
-        min=false;
-        stc++;
+key3.addEventListener("click",function(){
+    display(3);
+});
+
+key4.addEventListener("click",function(){
+    display(4);
+});
+
+key5.addEventListener("click",function(){
+    display(5);
+});
+
+key6.addEventListener("click",function(){
+    display(6);
+});
+
+key7.addEventListener("click",function(){
+    display(7);
+});
+
+key8.addEventListener("click",function(){
+    display(8);
+});
+
+key9.addEventListener("click",function(){
+    display(9);
+});
+
+clear.addEventListener("click",function(){
+    screen.innerHTML="";//clear the screen by displaying ""
+});
+
+let add=document.getElementById("plus");
+let subtract=document.getElementById("minus");
+let multiply=document.getElementById("multiply");
+let divide=document.getElementById("divide");
+
+//function to check whether there is error in the syntax, basically to avoid the user to enter anything like multiple'.','+','-','*' etc together.
+function repeat(e){
+    if(symbol<=0){
+        symbol=1;
+        display(e);
     }
     else{
-    answer+=num;// why to add num here ? and why not here  add here because it needed to be added no.
+        alert("Bad Command");
+        return false;
     }
-    num=0;
-    add=true;
-    decimal=false;
+}
+add.addEventListener("click",function(){
+    repeat("+");
 });
-minus.addEventListener("click",function(){
-    text.innerHTML=`${text.textContent}-`;
-    clearscreen=false;
-    if(stc==1){
-        min=true;
-    }
-    num=0;
-    subtract=true;
-    decimal=false;
+
+subtract.addEventListener("click",function(){
+    repeat("-");
 });
+
 multiply.addEventListener("click",function(){
-    text.innerHTML=`${text.textContent}*`;
-        clearscreen=false;
-    star=true;
-    decimal=false;
+    repeat("*");
 });
+
 divide.addEventListener("click",function(){
-    text.innerHTML=`${text.textContent}/`;
-        clearscreen=false;
-    slash=true;
-    decimal=false;
+    repeat("/");
 });
+
+let decimal=document.getElementById("point");
+decimal.addEventListener("click",function(){
+    repeat(".");
+});
+
 equals.addEventListener("click",function(){
-    // if(stc==1){
-    //     if(min==false)//check negative sign
-    //     answer-=num;
-    //     else
-    //     answer+=num;
-    //     stc++;
-    // }
-    if(add){
-        answer+=num;
-        add=false;
+    try {
+        let result = eval(screen.textContent);//eval is used to evaluate the expression inside the screen.
+        screen.textContent = result;
     }
-    if(subtract){
-        answer-=num;
-        subtract=false;
+    catch {
+        screen.textContent = "Error";
     }
-    if(star){
-        star=false;
+});
+
+//To make the calculator accessible using the keyboard.
+document.addEventListener("keydown", function(event) {
+    let key = event.key;
+
+    if ("0123456789".includes(key)) {
+        symbol=0;
+    }    
+
+    switch(key) {
+        case "0":
+            key0.click();
+            break;
+
+        case "1":
+            key1.click();
+            break;
+
+        case "2":
+            key2.click();
+            break;
+
+        case "3":
+            key3.click();
+            break;
+
+        case "4":
+            key4.click();
+            break;
+
+        case "5":
+            key5.click();
+            break;
+
+        case "6":
+            key6.click();
+            break;
+
+        case "7":
+            key7.click();
+            break;
+
+        case "8":
+            key8.click();
+            break;
+
+        case "9":
+            key9.click();
+            break;
+
+        case "+":
+            add.click();
+            break;
+
+        case "-":
+            subtract.click();
+            break;
+
+        case "*":
+            multiply.click();
+            break;
+
+        case "/":
+            divide.click();
+            break;
+
+        case ".":
+            decimal.click();
+            break;
+
+        case "Enter":
+            equals.click();
+            break;
+
+        case "=":
+            equals.click();
+            break;
+
+        case "Backspace":
+            clear.click();
+            break;
+        case "Escape":
+            clear.click();
+            break;
     }
-    if(slash){
-        slash=false;
-    }
-    text.innerHTML=`${answer}`;
-    console.log(num);
-    count=1;decimal=false;
-    num=0;
-    clearscreen=true;
 });
