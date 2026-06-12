@@ -1,9 +1,79 @@
 *{
     margin: 0%;
     padding: 0%;
+    box-sizing: border-box;
 }
 
 html, body{
     height: 100%;
     width: 100%;
+}
+button{
+    cursor: pointer;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding:3rem;
+    justify-content: center;
+}
+.calc{
+    background-color: #e7e4e4;
+    height: 25rem;
+    width:22rem;
+    padding:1rem;
+    /* text-align: center; */
+}
+#holder{
+    background-color: white;
+    height: 3rem;
+    width:20rem;
+    margin-bottom:1rem;
+    box-shadow: inset 0 0 10px rgba(7, 7, 7, 0.3);
+    padding:0.7rem;
+    font-size: larger;
+}
+.line{
+    margin-bottom: 0.5rem;
+}
+.btn{
+    font-size: 1.3rem;
+    margin:0.1rem;
+    padding:0.8rem;
+    padding-left:1.9rem;
+    padding-right: 1.9rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+#C{
+    background-color: red;
+    color: white;
+}
+#divide{
+    color: white;
+    background-color: #0075DB;
+}
+#multiply{
+    color: white;
+    background-color: #0075DB;
+}
+#minus{
+    color: white;
+    background-color: #0075DB;
+}
+#plus{
+    color: white;
+    background-color: #0075DB;
+}
+.equaldiv{
+    display: flex;
+}
+#equals{
+    margin-left: 0.4rem;
+    padding:2.4rem;
+    padding-left:2rem;
+    padding-right: 2rem;
+    background-color: rgb(0, 205, 0);
 }
